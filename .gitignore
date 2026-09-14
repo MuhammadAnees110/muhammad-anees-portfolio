@@ -10,7 +10,6 @@ build/
 .output/
 .next/
 .cache/
-.parcel-cache/
 
 # ===== Logs =====
 *.log
@@ -40,7 +39,6 @@ desktop.ini
 # ===== Misc =====
 .vercel
 .netlify
-.firebase/
 *.local
 coverage/
 .history/
