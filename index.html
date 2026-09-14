@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- ===== Primary Meta Tags ===== -->
-    <title>Muhammad Anees | WordPress Developer & WooCommerce Specialist</title>
+    <title>Muhammad Anees | WordPress Developer &amp; WooCommerce Specialist</title>
+
+    <!-- ===== Google Analytics 4 ===== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJHN4VHHEB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VJHN4VHHEB');
+    </script>
+
+    <!-- ===== Google Search Console verification ===== -->
+    <meta name="google-site-verification" content="vXKIZqm4drD34RP_WarOXKgMt-WpRadcz6sx8eBZbQM" />
     <meta name="title" content="Muhammad Anees | WordPress Developer & WooCommerce Specialist">
     <meta name="description" content="Muhammad Anees — Passionate WordPress Developer building modern, fast, responsive and SEO-friendly WordPress websites, WooCommerce stores, and custom themes for international clients.">
     <meta name="keywords" content="WordPress Developer, WooCommerce Developer, Elementor, Custom Theme, PHP, MySQL, Web Developer Pakistan, Muhammad Anees, Fiverr WordPress, Upwork WordPress">
     <meta name="author" content="Muhammad Anees">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#fbfbfd">
+    <meta name="theme-color" content="#071A2F">
 
     <!-- ===== Open Graph / Facebook ===== -->
     <meta property="og:type" content="website">
@@ -28,28 +40,16 @@
     <meta name="twitter:description" content="Building Modern, Fast, Responsive & SEO-Friendly WordPress Websites for international clients.">
     <meta name="twitter:image" content="profile.jpeg">
 
-    <!-- ===== Google Analytics 4 ===== -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJHN4VHHEB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-VJHN4VHHEB');
-    </script>
-
-    <!-- ===== Google Search Console verification ===== -->
-    <meta name="google-site-verification" content="vXKIZqm4drD34RP_WarOXKgMt-WpRadcz6sx8eBZbQM" />
-
     <!-- ===== Canonical ===== -->
     <link rel="canonical" href="https://muhammadanees.dev/">
 
     <!-- ===== Favicon ===== -->
     <link rel="icon" type="image/jpeg" href="profile.jpeg">
 
-    <!-- ===== Preconnect & Fonts (Inter) ===== -->
+    <!-- ===== Preconnect & Fonts ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- ===== Font Awesome ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer">
@@ -99,621 +99,877 @@
 </head>
 <body>
 
-    <!-- ===== Nav ===== -->
-    <nav class="nav" id="nav">
-        <div class="nav__inner">
+    <!-- ===== Loading Animation ===== -->
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader__inner">
+            <div class="loader__ring"></div>
+            <div class="loader__ring"></div>
+            <div class="loader__ring"></div>
+            <span class="loader__text">MA</span>
+        </div>
+    </div>
+
+    <!-- ===== Custom Cursor (desktop only) ===== -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- ===== Progress Bar ===== -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- ===== Navbar ===== -->
+    <header class="navbar" id="navbar">
+        <nav class="nav container" aria-label="Primary navigation">
             <a href="#hero" class="nav__logo" aria-label="Muhammad Anees - Home">
-                Muhammad Anees
+                <span class="nav__logo-mark">MA</span>
+                <span class="nav__logo-text">Muhammad<span>Anees</span></span>
             </a>
+
             <ul class="nav__menu" id="navMenu">
+                <li><a href="#hero" class="nav__link active">Home</a></li>
                 <li><a href="#about" class="nav__link">About</a></li>
                 <li><a href="#skills" class="nav__link">Skills</a></li>
                 <li><a href="#services" class="nav__link">Services</a></li>
-                <li><a href="#projects" class="nav__link">Work</a></li>
-                <li><a href="#experience" class="nav__link">Journey</a></li>
+                <li><a href="#projects" class="nav__link">Projects</a></li>
+                <li><a href="#experience" class="nav__link">Experience</a></li>
+                <li><a href="#why-hire-me" class="nav__link">Why Me</a></li>
                 <li><a href="#contact" class="nav__link">Contact</a></li>
             </ul>
+
             <div class="nav__actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle theme">
                     <i class="fa-solid fa-moon"></i>
                     <i class="fa-solid fa-sun"></i>
                 </button>
-                <a href="#contact" class="btn btn--small btn--primary nav__cta">Hire Me</a>
+                <a href="#contact" class="btn btn--small nav__cta">Hire Me</a>
                 <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-                    <span></span><span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <main>
 
         <!-- ===== 1. HERO ===== -->
         <section class="hero section" id="hero">
-            <div class="container container--narrow">
-                <p class="hero__eyebrow reveal">WordPress Developer</p>
-                <h1 class="hero__title reveal" style="--i:1">
-                    Building modern,<br>fast, responsive<br>&amp; SEO-friendly websites.
-                </h1>
-                <p class="hero__lede reveal" style="--i:2">
-                    I'm Muhammad Anees — a WordPress Developer specialising in WooCommerce,
-                    Elementor, and high-performance websites for clients, agencies and software
-                    houses worldwide.
-                </p>
-                <div class="hero__cta reveal" style="--i:3">
-                    <a href="#projects" class="btn btn--primary">
-                        View Work <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="btn btn--secondary">
-                        Get in Touch
-                    </a>
+            <div class="hero__bg" aria-hidden="true">
+                <span class="floating-shape shape-1"></span>
+                <span class="floating-shape shape-2"></span>
+                <span class="floating-shape shape-3"></span>
+                <span class="floating-shape shape-4"></span>
+                <span class="floating-shape shape-5"></span>
+            </div>
+
+            <div class="hero__grid container">
+                <div class="hero__content reveal">
+                    <span class="hero__badge">
+                        <span class="pulse-dot"></span> Available for Freelance Projects
+                    </span>
+                    <h1 class="hero__title">
+                        Hi, I'm <span class="text-gradient">Muhammad Anees</span>
+                    </h1>
+                    <h2 class="hero__role">
+                        I'm a <span class="typing" id="typing"></span><span class="cursor-blink">|</span>
+                    </h2>
+                    <p class="hero__tagline">
+                        Building Modern, Fast, Responsive &amp; SEO-Friendly WordPress Websites
+                        for clients, agencies and software houses worldwide.
+                    </p>
+
+                    <div class="hero__cta">
+                        <a href="#projects" class="btn btn--primary">
+                            <i class="fa-solid fa-rocket"></i> View Projects
+                        </a>
+                        <a href="#contact" class="btn btn--ghost">
+                            <i class="fa-solid fa-paper-plane"></i> Get In Touch
+                        </a>
+                        <a href="#" class="btn btn--soft" download>
+                            <i class="fa-solid fa-download"></i> Download CV
+                        </a>
+                    </div>
+
+                    <div class="hero__socials">
+                        <a href="https://github.com/MuhammadAnees110" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/muhammadanees-dev/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:m.anees.dev0@gmail.com" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="tel:+923127507168" aria-label="Phone">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="hero__socials reveal" style="--i:4">
-                    <a href="https://github.com/MuhammadAnees110" target="_blank" rel="noopener" aria-label="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/muhammadanees-dev/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="mailto:m.anees.dev0@gmail.com" aria-label="Email">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
-                    <a href="tel:+923127507168" aria-label="Phone">
-                        <i class="fa-solid fa-phone"></i>
-                    </a>
+
+                <div class="hero__visual reveal">
+                    <div class="hero__photo-wrap">
+                        <div class="hero__photo-ring"></div>
+                        <div class="hero__photo-glow"></div>
+                        <img src="profile.jpeg" alt="Muhammad Anees — WordPress Developer" class="hero__photo" width="420" height="420" fetchpriority="high">
+                        <span class="hero__chip hero__chip--1">
+                            <i class="fa-brands fa-wordpress"></i> WordPress
+                        </span>
+                        <span class="hero__chip hero__chip--2">
+                            <i class="fa-solid fa-cart-shopping"></i> WooCommerce
+                        </span>
+                        <span class="hero__chip hero__chip--3">
+                            <i class="fa-solid fa-bolt"></i> Performance
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#about" class="hero__scroll" aria-label="Scroll to About">
+                <span class="mouse"><span class="wheel"></span></span>
+                <span class="hero__scroll-text">Scroll</span>
+            </a>
+        </section>
+
+        <!-- ===== Client Logos Placeholder ===== -->
+        <section class="clients section" aria-label="Clients">
+            <div class="container">
+                <p class="clients__label">Trusted by clients across the globe</p>
+                <div class="clients__logos">
+                    <div class="client-logo"><i class="fa-solid fa-paw"></i> PetSupplyGo</div>
+                    <div class="client-logo"><i class="fa-solid fa-mug-hot"></i> CafeBethak</div>
+                    <div class="client-logo"><i class="fa-solid fa-house"></i> BestMidwestRealtor</div>
+                    <div class="client-logo"><i class="fa-solid fa-truck"></i> FETLogistics</div>
+                    <div class="client-logo"><i class="fa-solid fa-seedling"></i> HerSoulBusiness</div>
+                    <div class="client-logo"><i class="fa-solid fa-fire"></i> BlueBooms</div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== 2. ABOUT ===== -->
-        <section class="section" id="about">
-            <div class="container container--narrow">
-                <p class="eyebrow reveal">About</p>
-                <h2 class="headline reveal" style="--i:1">
-                    Clean code.<br>Excellent UX.<br>Long-term maintainability.
-                </h2>
-                <div class="prose reveal" style="--i:2">
-                    <p>
-                        I'm a passionate WordPress Developer specialising in modern, responsive, SEO-friendly,
-                        and high-performance websites. I've delivered business websites, WooCommerce stores,
-                        corporate platforms, logistics sites, restaurant menus, and real estate portals for
-                        international clients.
-                    </p>
-                    <p>
-                        My focus is on clean code, excellent user experience, website optimisation, and
-                        long-term maintainability. Whether you're a startup, an established business, or an
-                        agency looking for a reliable development partner, I deliver scalable WordPress
-                        solutions that look great and load fast.
-                    </p>
+        <!-- ===== 2. ABOUT ME ===== -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-head__eyebrow">01 — About</span>
+                    <h2 class="section-head__title">About Me</h2>
+                    <p class="section-head__subtitle">A passionate developer who turns ideas into pixel-perfect, high-performing websites.</p>
                 </div>
 
-                <ul class="bullet-list reveal" style="--i:3">
-                    <li>Clean, maintainable &amp; well-documented code</li>
-                    <li>Mobile-first responsive design</li>
-                    <li>Core Web Vitals &amp; SEO optimisation</li>
-                    <li>Long-term support &amp; maintenance</li>
-                </ul>
+                <div class="about__grid">
+                    <div class="about__visual reveal">
+                        <div class="about__card glass">
+                            <img src="profile.jpeg" alt="Muhammad Anees portrait" class="about__photo" loading="lazy" width="380" height="460">
+                            <div class="about__stats">
+                                <div class="about__stat">
+                                    <span class="counter" data-target="9">0</span><span>+</span>
+                                    <small>Projects Delivered</small>
+                                </div>
+                                <div class="about__stat">
+                                    <span class="counter" data-target="100">0</span><span>%</span>
+                                    <small>Client Satisfaction</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="meta-grid reveal" style="--i:4">
-                    <div><span>Name</span>Muhammad Anees</div>
-                    <div><span>Email</span><a href="mailto:m.anees.dev0@gmail.com">m.anees.dev0@gmail.com</a></div>
-                    <div><span>Phone</span><a href="tel:+923127507168">+92 312 7507168</a></div>
-                    <div><span>Location</span>Karachi, Pakistan</div>
-                    <div><span>Availability</span>Open to freelance &amp; remote</div>
-                    <div><span>Languages</span>English, Urdu</div>
-                </div>
+                    <div class="about__content reveal">
+                        <h3 class="about__title">WordPress Developer focused on performance, UX &amp; SEO.</h3>
+                        <p>
+                            I am a passionate WordPress Developer specializing in modern, responsive, SEO-friendly,
+                            and high-performance websites. I have experience developing business websites, WooCommerce stores,
+                            corporate websites, logistics platforms, restaurant websites, and real estate websites.
+                        </p>
+                        <p>
+                            I focus on clean code, excellent user experience, website optimization, and long-term
+                            maintainability. Whether you are a startup, an established business, or an agency looking
+                            for a reliable development partner, I deliver scalable WordPress solutions that look great
+                            and load fast.
+                        </p>
 
-                <div class="section__cta reveal" style="--i:5">
-                    <a href="#contact" class="btn btn--primary">
-                        Let's Work Together <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="#" class="btn btn--ghost" download>
-                        Download CV
-                    </a>
+                        <ul class="about__list">
+                            <li><i class="fa-solid fa-circle-check"></i> Clean, maintainable &amp; well-documented code</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Mobile-first responsive design</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Core Web Vitals &amp; SEO optimization</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Long-term support &amp; maintenance</li>
+                        </ul>
+
+                        <div class="about__meta">
+                            <div><span>Name:</span> Muhammad Anees</div>
+                            <div><span>Email:</span> m.anees.dev0@gmail.com</div>
+                            <div><span>Phone:</span> +92 312 7507168</div>
+                            <div><span>Location:</span> Karachi, Pakistan</div>
+                            <div><span>Availability:</span> Open to freelance &amp; remote</div>
+                            <div><span>Languages:</span> English, Urdu</div>
+                        </div>
+
+                        <div class="about__cta">
+                            <a href="#contact" class="btn btn--primary">
+                                <i class="fa-solid fa-handshake"></i> Let's Work Together
+                            </a>
+                            <a href="#" class="btn btn--ghost" download>
+                                <i class="fa-solid fa-file-arrow-down"></i> Download CV
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== 3. SKILLS ===== -->
-        <section class="section section--bordered" id="skills">
-            <div class="container container--narrow">
-                <p class="eyebrow reveal">Skills</p>
-                <h2 class="headline reveal" style="--i:1">
-                    A complete toolkit<br>for the modern web.
-                </h2>
-
-                <div class="skill-list reveal" style="--i:2">
-                    <div class="skill-row">
-                        <span class="skill-row__name">WordPress</span>
-                        <span class="skill-row__bar" data-progress="95"></span>
-                        <span class="skill-row__pct">95%</span>
-                    </div>
-                    <div class="skill-row">
-                        <span class="skill-row__name">WooCommerce</span>
-                        <span class="skill-row__bar" data-progress="90"></span>
-                        <span class="skill-row__pct">90%</span>
-                    </div>
-                    <div class="skill-row">
-                        <span class="skill-row__name">Elementor</span>
-                        <span class="skill-row__bar" data-progress="92"></span>
-                        <span class="skill-row__pct">92%</span>
-                    </div>
-                    <div class="skill-row">
-                        <span class="skill-row__name">HTML5</span>
-                        <span class="skill-row__bar" data-progress="95"></span>
-                        <span class="skill-row__pct">95%</span>
-                    </div>
-                    <div class="skill-row">
-                        <span class="skill-row__name">CSS3</span>
-                        <span class="skill-row__bar" data-progress="90"></span>
-                        <span class="skill-row__pct">90%</span>
-                    </div>
-                    <div class="skill-row">
-                        <span class="skill-row__name">JavaScript</span>
-                        <span class="skill-row__bar" data-progress="75"></span>
-                        <span class="skill-row__pct">75%</span>
-                    </div>
-                    <div class="skill-row">
-                        <span class="skill-row__name">PHP</span>
-                        <span class="skill-row__bar" data-progress="80"></span>
-                        <span class="skill-row__pct">80%</span>
-                    </div>
-                    <div class="skill-row">
-                        <span class="skill-row__name">MySQL</span>
-                        <span class="skill-row__bar" data-progress="78"></span>
-                        <span class="skill-row__pct">78%</span>
-                    </div>
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-head__eyebrow">02 — Skills</span>
+                    <h2 class="section-head__title">Technical Skills</h2>
+                    <p class="section-head__subtitle">A complete toolkit for building fast, secure, and scalable WordPress products.</p>
                 </div>
 
-                <div class="chip-cloud reveal" style="--i:3">
-                    <span>WordPress</span>
-                    <span>WooCommerce</span>
-                    <span>Elementor</span>
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                    <span>PHP</span>
-                    <span>MySQL</span>
-                    <span>Git</span>
-                    <span>GitHub</span>
-                    <span>Bootstrap</span>
-                    <span>Responsive Design</span>
-                    <span>SEO</span>
-                    <span>Website Security</span>
-                    <span>Website Performance</span>
-                    <span>Website Migration</span>
-                    <span>Bug Fixing</span>
-                    <span>cPanel</span>
-                    <span>Hosting</span>
+                <div class="skills__grid">
+                    <div class="skills__progress reveal">
+                        <h3 class="skills__subtitle">Core Proficiency</h3>
+
+                        <div class="skill-bar">
+                            <div class="skill-bar__head"><span>WordPress</span><span>95%</span></div>
+                            <div class="skill-bar__track"><div class="skill-bar__fill" data-progress="95"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar__head"><span>WooCommerce</span><span>90%</span></div>
+                            <div class="skill-bar__track"><div class="skill-bar__fill" data-progress="90"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar__head"><span>Elementor</span><span>92%</span></div>
+                            <div class="skill-bar__track"><div class="skill-bar__fill" data-progress="92"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar__head"><span>HTML5</span><span>95%</span></div>
+                            <div class="skill-bar__track"><div class="skill-bar__fill" data-progress="95"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar__head"><span>CSS3</span><span>90%</span></div>
+                            <div class="skill-bar__track"><div class="skill-bar__fill" data-progress="90"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar__head"><span>JavaScript</span><span>75%</span></div>
+                            <div class="skill-bar__track"><div class="skill-bar__fill" data-progress="75"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar__head"><span>PHP</span><span>80%</span></div>
+                            <div class="skill-bar__track"><div class="skill-bar__fill" data-progress="80"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar__head"><span>MySQL</span><span>78%</span></div>
+                            <div class="skill-bar__track"><div class="skill-bar__fill" data-progress="78"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="skills__chips reveal">
+                        <h3 class="skills__subtitle">Tools &amp; Technologies</h3>
+                        <div class="chip-cloud">
+                            <span class="chip"><i class="fa-brands fa-wordpress"></i> WordPress</span>
+                            <span class="chip"><i class="fa-solid fa-cart-shopping"></i> WooCommerce</span>
+                            <span class="chip"><i class="fa-solid fa-puzzle-piece"></i> Elementor</span>
+                            <span class="chip"><i class="fa-brands fa-html5"></i> HTML5</span>
+                            <span class="chip"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                            <span class="chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+                            <span class="chip"><i class="fa-brands fa-php"></i> PHP</span>
+                            <span class="chip"><i class="fa-solid fa-database"></i> MySQL</span>
+                            <span class="chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+                            <span class="chip"><i class="fa-brands fa-github"></i> GitHub</span>
+                            <span class="chip"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
+                            <span class="chip"><i class="fa-solid fa-mobile-screen"></i> Responsive Design</span>
+                            <span class="chip"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO</span>
+                            <span class="chip"><i class="fa-solid fa-shield-halved"></i> Website Security</span>
+                            <span class="chip"><i class="fa-solid fa-gauge-high"></i> Performance</span>
+                            <span class="chip"><i class="fa-solid fa-arrows-up-down-left-right"></i> Migration</span>
+                            <span class="chip"><i class="fa-solid fa-bug"></i> Bug Fixing</span>
+                            <span class="chip"><i class="fa-solid fa-server"></i> cPanel</span>
+                            <span class="chip"><i class="fa-solid fa-cloud"></i> Hosting</span>
+                        </div>
+
+                        <div class="skills__stats">
+                            <div class="skill-stat">
+                                <span class="counter" data-target="20">0</span><small>Tech Stack</small>
+                            </div>
+                            <div class="skill-stat">
+                                <span class="counter" data-target="9">0</span><small>Live Projects</small>
+                            </div>
+                            <div class="skill-stat">
+                                <span class="counter" data-target="3">0</span><small>Years Coding</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== 4. SERVICES ===== -->
-        <section class="section" id="services">
-            <div class="container container--narrow">
-                <p class="eyebrow reveal">Services</p>
-                <h2 class="headline reveal" style="--i:1">
-                    What I do.
-                </h2>
-                <p class="lede reveal" style="--i:2">
-                    End-to-end WordPress services designed to grow your business online.
-                </p>
+        <section class="services section" id="services">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-head__eyebrow">03 — Services</span>
+                    <h2 class="section-head__title">What I Do</h2>
+                    <p class="section-head__subtitle">End-to-end WordPress services designed to grow your business online.</p>
+                </div>
 
-                <ul class="service-list reveal" style="--i:3">
-                    <li class="service-row">
-                        <span class="service-row__num">01</span>
-                        <div class="service-row__body">
-                            <h3>WordPress Development</h3>
-                            <p>Custom WordPress websites built from scratch with clean code, flexible page builders, and scalable architecture.</p>
-                        </div>
-                        <i class="fa-brands fa-wordpress service-row__ic"></i>
-                    </li>
-                    <li class="service-row">
-                        <span class="service-row__num">02</span>
-                        <div class="service-row__body">
-                            <h3>WooCommerce Development</h3>
-                            <p>Full-featured online stores with secure checkout, payment gateway integration, and conversion-focused UX.</p>
-                        </div>
-                        <i class="fa-solid fa-cart-shopping service-row__ic"></i>
-                    </li>
-                    <li class="service-row">
-                        <span class="service-row__num">03</span>
-                        <div class="service-row__body">
-                            <h3>Elementor Development</h3>
-                            <p>Pixel-perfect Elementor builds with custom widgets, dynamic content, and reusable global templates.</p>
-                        </div>
-                        <i class="fa-solid fa-puzzle-piece service-row__ic"></i>
-                    </li>
-                    <li class="service-row">
-                        <span class="service-row__num">04</span>
-                        <div class="service-row__body">
-                            <h3>Custom Theme Customization</h3>
-                            <p>Tailor-made theme modifications that match your brand identity while staying lightweight and update-safe.</p>
-                        </div>
-                        <i class="fa-solid fa-palette service-row__ic"></i>
-                    </li>
-                    <li class="service-row">
-                        <span class="service-row__num">05</span>
-                        <div class="service-row__body">
-                            <h3>Plugin Customization</h3>
-                            <p>Custom plugin tweaks, third-party integrations, and feature extensions without breaking core updates.</p>
-                        </div>
-                        <i class="fa-solid fa-plug service-row__ic"></i>
-                    </li>
-                    <li class="service-row">
-                        <span class="service-row__num">06</span>
-                        <div class="service-row__body">
-                            <h3>Website Redesign</h3>
-                            <p>Modern redesigns of outdated websites — better UX, faster load times, refreshed branding, and clean code.</p>
-                        </div>
-                        <i class="fa-solid fa-wand-magic-sparkles service-row__ic"></i>
-                    </li>
-                    <li class="service-row">
-                        <span class="service-row__num">07</span>
-                        <div class="service-row__body">
-                            <h3>Landing Pages</h3>
-                            <p>High-converting landing pages optimised for ads, lead capture, and product launches.</p>
-                        </div>
-                        <i class="fa-solid fa-bullseye service-row__ic"></i>
-                    </li>
-                    <li class="service-row">
-                        <span class="service-row__num">08</span>
-                        <div class="service-row__body">
-                            <h3>Website Migration</h3>
-                            <p>Zero-downtime migrations between hosts, domains, or platforms — with full backup &amp; SSL setup.</p>
-                        </div>
-                        <i class="fa-solid fa-arrows-up-down-left-right service-row__ic"></i>
-                    </li>
-                    <li class="service-row">
-                        <span class="service-row__num">09</span>
-                        <div class="service-row__body">
-                            <h3>Website Maintenance</h3>
-                            <p>Ongoing updates, security monitoring, backups, and content changes so your site stays healthy.</p>
-                        </div>
-                        <i class="fa-solid fa-screwdriver-wrench service-row__ic"></i>
-                    </li>
-                    <li class="service-row">
-                        <span class="service-row__num">10</span>
-                        <div class="service-row__body">
-                            <h3>Speed Optimisation</h3>
-                            <p>Lighthouse-grade optimisations: caching, image compression, DB tuning, and Core Web Vitals pass.</p>
-                        </div>
-                        <i class="fa-solid fa-gauge-high service-row__ic"></i>
-                    </li>
-                    <li class="service-row">
-                        <span class="service-row__num">11</span>
-                        <div class="service-row__body">
-                            <h3>Technical Support</h3>
-                            <p>Reliable troubleshooting, bug fixes, and 1-on-1 technical guidance for site owners and teams.</p>
-                        </div>
-                        <i class="fa-solid fa-headset service-row__ic"></i>
-                    </li>
-                </ul>
+                <div class="services__grid">
+                    <article class="service-card glass reveal">
+                        <div class="service-card__icon"><i class="fa-brands fa-wordpress"></i></div>
+                        <h3>WordPress Development</h3>
+                        <p>Custom WordPress websites built from scratch with clean code, flexible page builders, and scalable architecture.</p>
+                    </article>
+                    <article class="service-card glass reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                        <h3>WooCommerce Development</h3>
+                        <p>Full-featured online stores with secure checkout, payment gateway integration, and conversion-focused UX.</p>
+                    </article>
+                    <article class="service-card glass reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                        <h3>Elementor Development</h3>
+                        <p>Pixel-perfect Elementor builds with custom widgets, dynamic content, and reusable global templates.</p>
+                    </article>
+                    <article class="service-card glass reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-palette"></i></div>
+                        <h3>Custom Theme Customization</h3>
+                        <p>Tailor-made theme modifications that match your brand identity while staying lightweight and update-safe.</p>
+                    </article>
+                    <article class="service-card glass reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-plug"></i></div>
+                        <h3>Plugin Customization</h3>
+                        <p>Custom plugin tweaks, third-party integrations, and feature extensions without breaking core updates.</p>
+                    </article>
+                    <article class="service-card glass reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>Website Redesign</h3>
+                        <p>Modern redesigns of outdated websites — better UX, faster load times, refreshed branding, and clean code.</p>
+                    </article>
+                    <article class="service-card glass reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3>Landing Pages</h3>
+                        <p>High-converting landing pages optimized for ads, lead capture, and product launches.</p>
+                    </article>
+                    <article class="service-card glass reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-arrows-up-down-left-right"></i></div>
+                        <h3>Website Migration</h3>
+                        <p>Zero-downtime migrations between hosts, domains, or platforms — with full backup &amp; SSL setup.</p>
+                    </article>
+                    <article class="service-card glass reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3>Website Maintenance</h3>
+                        <p>Ongoing updates, security monitoring, backups, and content changes so your site stays healthy.</p>
+                    </article>
+                    <article class="service-card glass reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-gauge-high"></i></div>
+                        <h3>Speed Optimization</h3>
+                        <p>Lighthouse-grade optimizations: caching, image compression, DB tuning, and Core Web Vitals pass.</p>
+                    </article>
+                    <article class="service-card glass reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-headset"></i></div>
+                        <h3>Technical Support</h3>
+                        <p>Reliable troubleshooting, bug fixes, and 1-on-1 technical guidance for site owners and teams.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- ===== 5. PROJECTS (sticky pinned, crossfading) ===== -->
-        <section class="section section--projects" id="projects">
-            <div class="container container--narrow">
-                <p class="eyebrow reveal">Work</p>
-                <h2 class="headline reveal" style="--i:1">
-                    Selected projects.
-                </h2>
-                <p class="lede reveal" style="--i:2">
-                    A few of the WordPress websites I've shipped for international clients.
-                </p>
-            </div>
+        <!-- ===== 5. FEATURED PROJECTS ===== -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-head__eyebrow">04 — Projects</span>
+                    <h2 class="section-head__title">Featured Projects</h2>
+                    <p class="section-head__subtitle">A selection of live WordPress websites built for international clients.</p>
+                </div>
 
-            <!-- Sticky pinned showcase -->
-            <div class="showcase" id="showcase">
-                <div class="showcase__visual">
-                    <div class="showcase__viewport">
-                        <div class="showcase__stage" id="showcaseStage">
-                            <div class="showcase__panel" data-project="pet">
+                <div class="projects__filters reveal">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+                    <button class="filter-btn" data-filter="business">Business</button>
+                    <button class="filter-btn" data-filter="restaurant">Restaurant</button>
+                    <button class="filter-btn" data-filter="realestate">Real Estate</button>
+                    <button class="filter-btn" data-filter="logistics">Logistics</button>
+                    <button class="filter-btn" data-filter="corporate">Corporate</button>
+                </div>
+
+                <div class="projects__grid" id="projectsGrid">
+
+                    <article class="project-card reveal" data-category="ecommerce">
+                        <div class="project-card__media">
+                            <div class="project-card__placeholder" style="--hue:18">
                                 <i class="fa-solid fa-paw"></i>
-                                <span class="showcase__panel-label">Pet Supply Go</span>
                             </div>
-                            <div class="showcase__panel" data-project="cafe">
+                            <div class="project-card__overlay">
+                                <a href="https://petsupplygo.com/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Website
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <span class="project-card__cat">E-Commerce · WooCommerce</span>
+                            <h3>Pet Supply Go</h3>
+                            <p>A full WooCommerce pet supplies store with product filtering, secure checkout, and a mobile-first UX.</p>
+                            <div class="project-card__tech">
+                                <span>WordPress</span><span>WooCommerce</span><span>Elementor</span><span>PHP</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="restaurant">
+                        <div class="project-card__media">
+                            <div class="project-card__placeholder" style="--hue:34">
                                 <i class="fa-solid fa-mug-hot"></i>
-                                <span class="showcase__panel-label">Cafe Bethak</span>
                             </div>
-                            <div class="showcase__panel" data-project="realtor">
+                            <div class="project-card__overlay">
+                                <a href="https://cafebethak.com/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Website
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <span class="project-card__cat">Restaurant · Cafe</span>
+                            <h3>Cafe Bethak</h3>
+                            <p>An elegant cafe website featuring a digital menu, gallery, reservation CTA, and rich brand storytelling.</p>
+                            <div class="project-card__tech">
+                                <span>WordPress</span><span>Elementor</span><span>HTML5</span><span>CSS3</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="realestate">
+                        <div class="project-card__media">
+                            <div class="project-card__placeholder" style="--hue:200">
                                 <i class="fa-solid fa-house"></i>
-                                <span class="showcase__panel-label">Best Midwest Realtor</span>
                             </div>
-                            <div class="showcase__panel" data-project="fet">
+                            <div class="project-card__overlay">
+                                <a href="https://bestmidwestrealtor.com/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Website
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <span class="project-card__cat">Real Estate</span>
+                            <h3>Best Midwest Realtor</h3>
+                            <p>A real estate platform with property listings, search filters, agent profiles, and lead capture forms.</p>
+                            <div class="project-card__tech">
+                                <span>WordPress</span><span>Elementor Pro</span><span>MySQL</span><span>SEO</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="logistics">
+                        <div class="project-card__media">
+                            <div class="project-card__placeholder" style="--hue:140">
                                 <i class="fa-solid fa-truck"></i>
-                                <span class="showcase__panel-label">FET Logistics</span>
                             </div>
-                            <div class="showcase__panel" data-project="soul">
+                            <div class="project-card__overlay">
+                                <a href="https://www.fetlogistics.co.uk/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Website
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <span class="project-card__cat">Logistics · UK</span>
+                            <h3>FET Logistics</h3>
+                            <p>A corporate logistics website with service pages, quote forms, route highlights, and a clean UK-focused UX.</p>
+                            <div class="project-card__tech">
+                                <span>WordPress</span><span>Custom Theme</span><span>PHP</span><span>Contact Form 7</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="business">
+                        <div class="project-card__media">
+                            <div class="project-card__placeholder" style="--hue:300">
                                 <i class="fa-solid fa-seedling"></i>
-                                <span class="showcase__panel-label">Her Soul Business</span>
                             </div>
-                            <div class="showcase__panel" data-project="booms">
+                            <div class="project-card__overlay">
+                                <a href="https://www.hersoulbusiness.com/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Website
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <span class="project-card__cat">Business · Coaching</span>
+                            <h3>Her Soul Business</h3>
+                            <p>A coaching business website with course modules, lead magnets, member storytelling, and an email funnel.</p>
+                            <div class="project-card__tech">
+                                <span>WordPress</span><span>Elementor</span><span>WooCommerce</span><span>SEO</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="corporate">
+                        <div class="project-card__media">
+                            <div class="project-card__placeholder" style="--hue:8">
                                 <i class="fa-solid fa-fire"></i>
-                                <span class="showcase__panel-label">Blue Booms</span>
                             </div>
-                            <div class="showcase__panel" data-project="raz">
+                            <div class="project-card__overlay">
+                                <a href="https://www.bluebooms.de/en" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Website
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <span class="project-card__cat">Corporate · Germany</span>
+                            <h3>Blue Booms</h3>
+                            <p>A bilingual corporate website (DE/EN) for a fireworks brand with product catalog and event showcase.</p>
+                            <div class="project-card__tech">
+                                <span>WordPress</span><span>WPML</span><span>Elementor</span><span>PHP</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="corporate">
+                        <div class="project-card__media">
+                            <div class="project-card__placeholder" style="--hue:220">
                                 <i class="fa-solid fa-building"></i>
-                                <span class="showcase__panel-label">RazTech Group</span>
                             </div>
-                            <div class="showcase__panel" data-project="host1">
+                            <div class="project-card__overlay">
+                                <a href="https://raztechgroup.com/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Website
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <span class="project-card__cat">Corporate · Tech</span>
+                            <h3>RazTech Group</h3>
+                            <p>A corporate tech group website with services overview, case studies, and a professional B2B design.</p>
+                            <div class="project-card__tech">
+                                <span>WordPress</span><span>Elementor</span><span>HTML5</span><span>CSS3</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="business">
+                        <div class="project-card__media">
+                            <div class="project-card__placeholder" style="--hue:160">
                                 <i class="fa-solid fa-globe"></i>
-                                <span class="showcase__panel-label">Hostinger 01</span>
                             </div>
-                            <div class="showcase__panel" data-project="host2">
+                            <div class="project-card__overlay">
+                                <a href="https://moccasin-fish-183093.hostingersite.com/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Website
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <span class="project-card__cat">Business · Hostinger</span>
+                            <h3>Hostinger Project 01</h3>
+                            <p>A custom WordPress build hosted on Hostinger — clean layout, optimized assets, and fast loading.</p>
+                            <div class="project-card__tech">
+                                <span>WordPress</span><span>Elementor</span><span>SEO</span><span>Speed Opt.</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="business">
+                        <div class="project-card__media">
+                            <div class="project-card__placeholder" style="--hue:260">
                                 <i class="fa-solid fa-rocket"></i>
-                                <span class="showcase__panel-label">Hostinger 02</span>
                             </div>
+                            <div class="project-card__overlay">
+                                <a href="https://white-mink-442627.hostingersite.com/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Website
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <span class="project-card__cat">Business · Hostinger</span>
+                            <h3>Hostinger Project 02</h3>
+                            <p>A second Hostinger-hosted WordPress project featuring a modern business layout and lightweight code.</p>
+                            <div class="project-card__tech">
+                                <span>WordPress</span><span>Elementor</span><span>PHP</span><span>MySQL</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 6. EXPERIENCE TIMELINE ===== -->
+        <section class="experience section" id="experience">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-head__eyebrow">05 — Journey</span>
+                    <h2 class="section-head__title">Experience &amp; Education</h2>
+                    <p class="section-head__subtitle">My academic path and hands-on freelance WordPress journey.</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="timeline__card glass">
+                            <span class="timeline__date">2026 — Present</span>
+                            <h3>BS Computer Science — 1st Year</h3>
+                            <h4>Sindh Madressatul Islam University (SMIU)</h4>
+                            <p>Pursuing a formal CS degree to deepen my knowledge of algorithms, data structures, and software engineering while continuing to deliver freelance WordPress projects.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot"><i class="fa-solid fa-briefcase"></i></div>
+                        <div class="timeline__card glass">
+                            <span class="timeline__date">2024 — Present</span>
+                            <h3>Freelance WordPress Developer</h3>
+                            <h4>Fiverr · Upwork · Direct Clients</h4>
+                            <p>Delivered 9+ live WordPress websites for international clients across e-commerce, restaurant, real estate, logistics and corporate niches. Focused on speed, SEO and conversion.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="timeline__card glass">
+                            <span class="timeline__date">2023 — 2025</span>
+                            <h3>Intermediate (HSSC)</h3>
+                            <h4>Board of Intermediate Education, Karachi</h4>
+                            <p>Completed Intermediate studies while self-learning WordPress, PHP, JavaScript, and modern frontend development through hands-on projects and online courses.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot"><i class="fa-solid fa-code"></i></div>
+                        <div class="timeline__card glass">
+                            <span class="timeline__date">2023</span>
+                            <h3>Started Web Development Journey</h3>
+                            <h4>Self-Taught · Online</h4>
+                            <p>Began learning HTML, CSS, Bootstrap, and JavaScript. Quickly progressed to WordPress, WooCommerce, and Elementor — building my first production websites for clients.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="timeline__card glass">
+                            <span class="timeline__date">2021 — 2022</span>
+                            <h3>Matriculation (SSC)</h3>
+                            <h4>Board of Secondary Education, Larkana</h4>
+                            <p>Completed secondary education with a focus on science and computer studies — the foundation that sparked my interest in software and the web.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="showcase__info">
-                    <article class="showcase__item" data-project="pet">
-                        <span class="showcase__cat">E-Commerce · WooCommerce</span>
-                        <h3 class="showcase__title">Pet Supply Go</h3>
-                        <p class="showcase__desc">A full WooCommerce pet supplies store with product filtering, secure checkout, and a mobile-first UX.</p>
-                        <div class="showcase__tech"><span>WordPress</span><span>WooCommerce</span><span>Elementor</span><span>PHP</span></div>
-                        <a href="https://petsupplygo.com/" target="_blank" rel="noopener" class="btn btn--small btn--primary">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </article>
-
-                    <article class="showcase__item" data-project="cafe">
-                        <span class="showcase__cat">Restaurant · Cafe</span>
-                        <h3 class="showcase__title">Cafe Bethak</h3>
-                        <p class="showcase__desc">An elegant cafe website featuring a digital menu, gallery, reservation CTA, and rich brand storytelling.</p>
-                        <div class="showcase__tech"><span>WordPress</span><span>Elementor</span><span>HTML5</span><span>CSS3</span></div>
-                        <a href="https://cafebethak.com/" target="_blank" rel="noopener" class="btn btn--small btn--primary">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </article>
-
-                    <article class="showcase__item" data-project="realtor">
-                        <span class="showcase__cat">Real Estate</span>
-                        <h3 class="showcase__title">Best Midwest Realtor</h3>
-                        <p class="showcase__desc">A real estate platform with property listings, search filters, agent profiles, and lead capture forms.</p>
-                        <div class="showcase__tech"><span>WordPress</span><span>Elementor Pro</span><span>MySQL</span><span>SEO</span></div>
-                        <a href="https://bestmidwestrealtor.com/" target="_blank" rel="noopener" class="btn btn--small btn--primary">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </article>
-
-                    <article class="showcase__item" data-project="fet">
-                        <span class="showcase__cat">Logistics · UK</span>
-                        <h3 class="showcase__title">FET Logistics</h3>
-                        <p class="showcase__desc">A corporate logistics website with service pages, quote forms, route highlights, and a clean UK-focused UX.</p>
-                        <div class="showcase__tech"><span>WordPress</span><span>Custom Theme</span><span>PHP</span><span>Contact Form 7</span></div>
-                        <a href="https://www.fetlogistics.co.uk/" target="_blank" rel="noopener" class="btn btn--small btn--primary">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </article>
-
-                    <article class="showcase__item" data-project="soul">
-                        <span class="showcase__cat">Business · Coaching</span>
-                        <h3 class="showcase__title">Her Soul Business</h3>
-                        <p class="showcase__desc">A coaching business website with course modules, lead magnets, member storytelling, and an email funnel.</p>
-                        <div class="showcase__tech"><span>WordPress</span><span>Elementor</span><span>WooCommerce</span><span>SEO</span></div>
-                        <a href="https://www.hersoulbusiness.com/" target="_blank" rel="noopener" class="btn btn--small btn--primary">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </article>
-
-                    <article class="showcase__item" data-project="booms">
-                        <span class="showcase__cat">Corporate · Germany</span>
-                        <h3 class="showcase__title">Blue Booms</h3>
-                        <p class="showcase__desc">A bilingual corporate website (DE/EN) for a fireworks brand with product catalog and event showcase.</p>
-                        <div class="showcase__tech"><span>WordPress</span><span>WPML</span><span>Elementor</span><span>PHP</span></div>
-                        <a href="https://www.bluebooms.de/en" target="_blank" rel="noopener" class="btn btn--small btn--primary">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </article>
-
-                    <article class="showcase__item" data-project="raz">
-                        <span class="showcase__cat">Corporate · Tech</span>
-                        <h3 class="showcase__title">RazTech Group</h3>
-                        <p class="showcase__desc">A corporate tech group website with services overview, case studies, and a professional B2B design.</p>
-                        <div class="showcase__tech"><span>WordPress</span><span>Elementor</span><span>HTML5</span><span>CSS3</span></div>
-                        <a href="https://raztechgroup.com/" target="_blank" rel="noopener" class="btn btn--small btn--primary">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </article>
-
-                    <article class="showcase__item" data-project="host1">
-                        <span class="showcase__cat">Business · Hostinger</span>
-                        <h3 class="showcase__title">Hostinger Project 01</h3>
-                        <p class="showcase__desc">A custom WordPress build hosted on Hostinger — clean layout, optimised assets, and fast loading.</p>
-                        <div class="showcase__tech"><span>WordPress</span><span>Elementor</span><span>SEO</span><span>Speed Opt.</span></div>
-                        <a href="https://moccasin-fish-183093.hostingersite.com/" target="_blank" rel="noopener" class="btn btn--small btn--primary">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </article>
-
-                    <article class="showcase__item" data-project="host2">
-                        <span class="showcase__cat">Business · Hostinger</span>
-                        <h3 class="showcase__title">Hostinger Project 02</h3>
-                        <p class="showcase__desc">A second Hostinger-hosted WordPress project featuring a modern business layout and lightweight code.</p>
-                        <div class="showcase__tech"><span>WordPress</span><span>Elementor</span><span>PHP</span><span>MySQL</span></div>
-                        <a href="https://white-mink-442627.hostingersite.com/" target="_blank" rel="noopener" class="btn btn--small btn--primary">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== 6. EXPERIENCE ===== -->
-        <section class="section section--bordered" id="experience">
-            <div class="container container--narrow">
-                <p class="eyebrow reveal">Journey</p>
-                <h2 class="headline reveal" style="--i:1">
-                    Experience &amp; education.
-                </h2>
-
-                <ul class="timeline reveal" style="--i:2">
-                    <li class="timeline__item">
-                        <span class="timeline__date">2026 — Present</span>
-                        <h3>BS Computer Science — 1st Year</h3>
-                        <p>Sindh Madressatul Islam University (SMIU)</p>
-                        <p class="timeline__desc">Pursuing a formal CS degree to deepen my knowledge of algorithms, data structures, and software engineering while continuing to deliver freelance WordPress projects.</p>
-                    </li>
-                    <li class="timeline__item">
-                        <span class="timeline__date">2024 — Present</span>
-                        <h3>Freelance WordPress Developer</h3>
-                        <p>Fiverr · Upwork · Direct Clients</p>
-                        <p class="timeline__desc">Delivered 9+ live WordPress websites for international clients across e-commerce, restaurant, real estate, logistics and corporate niches. Focused on speed, SEO and conversion.</p>
-                    </li>
-                    <li class="timeline__item">
-                        <span class="timeline__date">2023 — 2025</span>
-                        <h3>Intermediate (HSSC)</h3>
-                        <p>Board of Intermediate Education, Karachi</p>
-                        <p class="timeline__desc">Completed Intermediate studies while self-learning WordPress, PHP, JavaScript, and modern frontend development through hands-on projects and online courses.</p>
-                    </li>
-                    <li class="timeline__item">
-                        <span class="timeline__date">2023</span>
-                        <h3>Started Web Development Journey</h3>
-                        <p>Self-Taught · Online</p>
-                        <p class="timeline__desc">Began learning HTML, CSS, Bootstrap, and JavaScript. Quickly progressed to WordPress, WooCommerce, and Elementor — building my first production websites for clients.</p>
-                    </li>
-                    <li class="timeline__item">
-                        <span class="timeline__date">2021 — 2022</span>
-                        <h3>Matriculation (SSC)</h3>
-                        <p>Board of Secondary Education, Larkana</p>
-                        <p class="timeline__desc">Completed secondary education with a focus on science and computer studies — the foundation that sparked my interest in software and the web.</p>
-                    </li>
-                </ul>
             </div>
         </section>
 
         <!-- ===== 7. WHY HIRE ME ===== -->
-        <section class="section" id="why-hire-me">
-            <div class="container container--narrow">
-                <p class="eyebrow reveal">Why Me</p>
-                <h2 class="headline reveal" style="--i:1">
-                    Reasons clients choose to work with me.
-                </h2>
-
-                <ul class="reason-list reveal" style="--i:2">
-                    <li>
-                        <i class="fa-solid fa-bolt"></i>
-                        <h3>Fast &amp; Optimised</h3>
-                        <p>Websites engineered to score 90+ on Lighthouse, pass Core Web Vitals, and load in under 2 seconds.</p>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-mobile-screen"></i>
-                        <h3>Mobile-First</h3>
-                        <p>Every layout is crafted mobile-first — your visitors get a flawless experience on any device, any screen.</p>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-magnifying-glass-chart"></i>
-                        <h3>SEO-Friendly</h3>
-                        <p>Semantic markup, schema, clean URLs and structured data so search engines love your website from day one.</p>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <h3>Secure &amp; Reliable</h3>
-                        <p>Hardened WordPress installs, SSL setup, regular backups, and proactive security monitoring.</p>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-comments"></i>
-                        <h3>Clear Communication</h3>
-                        <p>Transparent updates, weekly progress reports, and quick replies across Fiverr, Upwork, LinkedIn and email.</p>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-handshake"></i>
-                        <h3>Long-Term Partner</h3>
-                        <p>I build relationships, not just websites. Most clients return for ongoing maintenance, features, and growth.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- ===== 8. GITHUB ===== -->
-        <section class="section section--bordered" id="github">
-            <div class="container container--narrow">
-                <p class="eyebrow reveal">GitHub</p>
-                <h2 class="headline reveal" style="--i:1">
-                    Explore my code.
-                </h2>
-                <p class="lede reveal" style="--i:2">
-                    I regularly push WordPress snippets, custom theme work, PHP utilities, and learning projects
-                    to my GitHub. Take a look at how I write clean, maintainable, well-commented code.
-                </p>
-
-                <div class="github-stats reveal" style="--i:3">
-                    <div><span>25</span>Repositories</div>
-                    <div><span>100</span>Commits / yr</div>
-                    <div><span>3</span>Languages</div>
+        <section class="why section" id="why-hire-me">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-head__eyebrow">06 — Why Me</span>
+                    <h2 class="section-head__title">Why Hire Me</h2>
+                    <p class="section-head__subtitle">Reasons international clients choose to work with me.</p>
                 </div>
 
-                <a href="https://github.com/MuhammadAnees110" target="_blank" rel="noopener" class="btn btn--primary reveal" style="--i:4">
-                    Visit GitHub Profile <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                <div class="why__grid">
+                    <div class="why-card glass reveal">
+                        <div class="why-card__icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Fast &amp; Optimized</h3>
+                        <p>Websites engineered to score 90+ on Lighthouse, pass Core Web Vitals, and load in under 2 seconds.</p>
+                    </div>
+                    <div class="why-card glass reveal">
+                        <div class="why-card__icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <h3>Mobile-First</h3>
+                        <p>Every layout is crafted mobile-first — your visitors get a flawless experience on any device, any screen.</p>
+                    </div>
+                    <div class="why-card glass reveal">
+                        <div class="why-card__icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h3>SEO-Friendly</h3>
+                        <p>Semantic markup, schema, clean URLs and structured data so search engines love your website from day one.</p>
+                    </div>
+                    <div class="why-card glass reveal">
+                        <div class="why-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Secure &amp; Reliable</h3>
+                        <p>Hardened WordPress installs, SSL setup, regular backups, and proactive security monitoring.</p>
+                    </div>
+                    <div class="why-card glass reveal">
+                        <div class="why-card__icon"><i class="fa-solid fa-comments"></i></div>
+                        <h3>Clear Communication</h3>
+                        <p>Transparent updates, weekly progress reports, and quick replies across Fiverr, Upwork, LinkedIn and email.</p>
+                    </div>
+                    <div class="why-card glass reveal">
+                        <div class="why-card__icon"><i class="fa-solid fa-handshake"></i></div>
+                        <h3>Long-Term Partner</h3>
+                        <p>I build relationships, not just websites. Most clients return for ongoing maintenance, features, and growth.</p>
+                    </div>
+                </div>
+
+                <!-- Testimonials Placeholder -->
+                <div class="testimonials reveal">
+                    <h3 class="testimonials__title">What Clients Say</h3>
+                    <div class="testimonials__grid">
+                        <figure class="testimonial glass">
+                            <div class="testimonial__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <blockquote>"Outstanding work. Delivered exactly what we wanted and the site is incredibly fast. Highly recommend!"</blockquote>
+                            <figcaption>
+                                <div class="testimonial__avatar">CL</div>
+                                <div><strong>Client Placeholder</strong><small>Business Owner · USA</small></div>
+                            </figcaption>
+                        </figure>
+                        <figure class="testimonial glass">
+                            <div class="testimonial__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <blockquote>"Professional, responsive, and detail-oriented. Our WooCommerce store conversion went up after the redesign."</blockquote>
+                            <figcaption>
+                                <div class="testimonial__avatar">AG</div>
+                                <div><strong>Agency Partner</strong><small>Software House · UK</small></div>
+                            </figcaption>
+                        </figure>
+                        <figure class="testimonial glass">
+                            <div class="testimonial__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <blockquote>"One of the best developers I've worked with on Fiverr. Clean code and beautiful design. Will hire again."</blockquote>
+                            <figcaption>
+                                <div class="testimonial__avatar">EU</div>
+                                <div><strong>Startup Founder</strong><small>Entrepreneur · Germany</small></div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- ===== 9. LINKEDIN ===== -->
-        <section class="section" id="linkedin">
-            <div class="container container--narrow">
-                <p class="eyebrow reveal">LinkedIn</p>
-                <h2 class="headline reveal" style="--i:1">
-                    Let's connect professionally.
-                </h2>
-                <p class="lede reveal" style="--i:2">
-                    Follow my professional journey on LinkedIn — where I share WordPress tips, project launches,
-                    and insights from working with international clients and software houses.
-                </p>
+        <!-- ===== 8. GITHUB SECTION ===== -->
+        <section class="github section" id="github">
+            <div class="container">
+                <div class="github__wrap glass reveal">
+                    <div class="github__content">
+                        <span class="section-head__eyebrow">07 — GitHub</span>
+                        <h2 class="github__title">Explore My Code</h2>
+                        <p>
+                            I regularly push WordPress snippets, custom theme work, PHP utilities, and learning projects
+                            to my GitHub. Take a look at how I write clean, maintainable, well-commented code.
+                        </p>
 
-                <ul class="bullet-list reveal" style="--i:3">
-                    <li>Verified WordPress Developer profile</li>
-                    <li>Regular project showcases &amp; case studies</li>
-                    <li>Open to freelance &amp; full-time remote roles</li>
-                    <li>Quick response to messages &amp; inquiries</li>
-                </ul>
+                        <div class="github__stats">
+                            <div class="github__stat">
+                                <span class="counter" data-target="25">0</span><small>Repositories</small>
+                            </div>
+                            <div class="github__stat">
+                                <span class="counter" data-target="100">0</span><small>Commits / yr</small>
+                            </div>
+                            <div class="github__stat">
+                                <span class="counter" data-target="3">0</span><small>Languages</small>
+                            </div>
+                        </div>
 
-                <a href="https://www.linkedin.com/in/muhammadanees-dev/" target="_blank" rel="noopener" class="btn btn--primary reveal" style="--i:4">
-                    Connect on LinkedIn <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                        <a href="https://github.com/MuhammadAnees110" target="_blank" rel="noopener" class="btn btn--primary">
+                            <i class="fa-brands fa-github"></i> Visit GitHub Profile
+                        </a>
+                    </div>
+                    <div class="github__visual" aria-hidden="true">
+                        <div class="github__card">
+                            <div class="github__card-head">
+                                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                                <span class="github__card-path">~/muhammad-anees</span>
+                            </div>
+                            <pre class="github__code"><code><span class="c-key">const</span> <span class="c-var">developer</span> = {
+  <span class="c-prop">name</span>: <span class="c-str">'Muhammad Anees'</span>,
+  <span class="c-prop">role</span>: <span class="c-str">'WordPress Developer'</span>,
+  <span class="c-prop">stack</span>: [<span class="c-str">'WP'</span>, <span class="c-str">'Woo'</span>, <span class="c-str">'PHP'</span>, <span class="c-str">'JS'</span>],
+  <span class="c-prop">available</span>: <span class="c-bool">true</span>,
+  <span class="c-prop">hire</span>: () => <span class="c-str">'🚀'</span>
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 9. LINKEDIN SECTION ===== -->
+        <section class="linkedin section" id="linkedin">
+            <div class="container">
+                <div class="linkedin__wrap glass reveal">
+                    <div class="linkedin__visual">
+                        <i class="fa-brands fa-linkedin linkedin__bg-icon"></i>
+                    </div>
+                    <div class="linkedin__content">
+                        <span class="section-head__eyebrow">08 — LinkedIn</span>
+                        <h2 class="linkedin__title">Let's Connect Professionally</h2>
+                        <p>
+                            Follow my professional journey on LinkedIn — where I share WordPress tips, project launches,
+                            and insights from working with international clients and software houses.
+                        </p>
+                        <ul class="linkedin__list">
+                            <li><i class="fa-solid fa-check"></i> Verified WordPress Developer profile</li>
+                            <li><i class="fa-solid fa-check"></i> Regular project showcases &amp; case studies</li>
+                            <li><i class="fa-solid fa-check"></i> Open to freelance &amp; full-time remote roles</li>
+                            <li><i class="fa-solid fa-check"></i> Quick response to messages &amp; inquiries</li>
+                        </ul>
+                        <a href="https://www.linkedin.com/in/muhammadanees-dev/" target="_blank" rel="noopener" class="btn btn--primary">
+                            <i class="fa-brands fa-linkedin-in"></i> Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- ===== 10. CONTACT ===== -->
-        <section class="section section--bordered" id="contact">
-            <div class="container container--narrow">
-                <p class="eyebrow reveal">Contact</p>
-                <h2 class="headline reveal" style="--i:1">
-                    Let's build something great.
-                </h2>
-                <p class="lede reveal" style="--i:2">
-                    Have a project in mind? Send a message and I'll get back to you within 24 hours.
-                </p>
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-head__eyebrow">09 — Contact</span>
+                    <h2 class="section-head__title">Let's Build Something Great</h2>
+                    <p class="section-head__subtitle">Have a project in mind? Send a message and I'll get back to you within 24 hours.</p>
+                </div>
 
-                <div class="contact-grid reveal" style="--i:3">
-                    <div class="contact-info">
-                        <ul>
+                <div class="contact__grid">
+                    <div class="contact__info reveal">
+                        <h3>Get In Touch</h3>
+                        <p>Whether you need a brand new WordPress website, a WooCommerce store, a redesign, or ongoing
+                           maintenance — I'm here to help your business grow online.</p>
+
+                        <ul class="contact__list">
                             <li>
-                                <i class="fa-solid fa-envelope"></i>
+                                <span class="contact__ic"><i class="fa-solid fa-envelope"></i></span>
                                 <div><small>Email</small><a href="mailto:m.anees.dev0@gmail.com">m.anees.dev0@gmail.com</a></div>
                             </li>
                             <li>
-                                <i class="fa-solid fa-phone"></i>
+                                <span class="contact__ic"><i class="fa-solid fa-phone"></i></span>
                                 <div><small>Phone</small><a href="tel:+923127507168">+92 312 7507168</a></div>
                             </li>
                             <li>
-                                <i class="fa-solid fa-location-dot"></i>
+                                <span class="contact__ic"><i class="fa-solid fa-location-dot"></i></span>
                                 <div><small>Location</small><span>Gulshan-e-Hadeed, Karachi, Pakistan</span></div>
                             </li>
                             <li>
-                                <i class="fa-solid fa-clock"></i>
-                                <div><small>Hours</small><span>Mon — Sat · 9 AM – 9 PM (PKT)</span></div>
+                                <span class="contact__ic"><i class="fa-solid fa-clock"></i></span>
+                                <div><small>Working Hours</small><span>Mon — Sat · 9 AM – 9 PM (PKT)</span></div>
                             </li>
                         </ul>
+
+                        <div class="contact__socials">
+                            <a href="https://github.com/MuhammadAnees110" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/muhammadanees-dev/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:m.anees.dev0@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="https://wa.me/923127507168" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
                     </div>
 
-                    <form class="contact-form" id="contactForm" novalidate
-                          action="https://formsubmit.co/m.anees.dev0@gmail.com"
-                          method="POST">
+                    <form class="contact__form glass reveal" id="contactForm" novalidate action="https://formsubmit.co/m.anees.dev0@gmail.com" method="POST">
                         <div class="form-row">
-                            <input type="text" id="name" name="name" placeholder="Name" required>
-                            <input type="email" id="email" name="email" placeholder="Email" required>
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
                         </div>
                         <div class="form-row">
-                            <input type="text" id="subject" name="subject" placeholder="Subject">
-                            <select id="budget" name="budget">
-                                <option value="">Budget</option>
-                                <option>$100 – $500</option>
-                                <option>$500 – $1,500</option>
-                                <option>$1,500 – $5,000</option>
-                                <option>$5,000+</option>
-                            </select>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Project inquiry">
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select budget</option>
+                                    <option>$100 – $500</option>
+                                    <option>$500 – $1,500</option>
+                                    <option>$1,500 – $5,000</option>
+                                    <option>$5,000+</option>
+                                </select>
+                            </div>
                         </div>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        </div>
                         <button type="submit" class="btn btn--primary btn--block">
-                            Send Message <i class="fa-solid fa-paper-plane"></i>
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
                         </button>
                         <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                     </form>
@@ -723,62 +979,70 @@
 
     </main>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ===== 11. FOOTER ===== -->
     <footer class="footer">
-        <div class="container container--narrow">
-            <div class="footer__top">
-                <div class="footer__brand">
-                    <a href="#hero" class="footer__logo">Muhammad Anees</a>
-                    <p>Building modern, fast, responsive &amp; SEO-friendly WordPress websites for clients worldwide.</p>
-                    <div class="footer__socials">
-                        <a href="https://github.com/MuhammadAnees110" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/muhammadanees-dev/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="mailto:m.anees.dev0@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                        <a href="https://wa.me/923127507168" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="footer__col">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Work</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">WordPress Dev</a></li>
-                        <li><a href="#services">WooCommerce</a></li>
-                        <li><a href="#services">Elementor</a></li>
-                        <li><a href="#services">Speed Optimisation</a></li>
-                        <li><a href="#services">Maintenance</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h4>Get in Touch</h4>
-                    <ul>
-                        <li><a href="mailto:m.anees.dev0@gmail.com">m.anees.dev0@gmail.com</a></li>
-                        <li><a href="tel:+923127507168">+92 312 7507168</a></li>
-                        <li>Karachi, Pakistan</li>
-                        <li><a href="#contact">Contact Form</a></li>
-                    </ul>
+        <div class="container footer__top">
+            <div class="footer__brand">
+                <a href="#hero" class="nav__logo">
+                    <span class="nav__logo-mark">MA</span>
+                    <span class="nav__logo-text">Muhammad<span>Anees</span></span>
+                </a>
+                <p>Building modern, fast, responsive &amp; SEO-friendly WordPress websites for clients worldwide.</p>
+                <div class="footer__socials">
+                    <a href="https://github.com/MuhammadAnees110" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/muhammadanees-dev/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:m.anees.dev0@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://wa.me/923127507168" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
-            <div class="footer__bottom">
+
+            <div class="footer__col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">WordPress Dev</a></li>
+                    <li><a href="#services">WooCommerce</a></li>
+                    <li><a href="#services">Elementor</a></li>
+                    <li><a href="#services">Speed Optimization</a></li>
+                    <li><a href="#services">Maintenance</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="mailto:m.anees.dev0@gmail.com">m.anees.dev0@gmail.com</a></li>
+                    <li><a href="tel:+923127507168">+92 312 7507168</a></li>
+                    <li>Karachi, Pakistan</li>
+                    <li><a href="#contact">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container footer__bottom-inner">
                 <p>&copy; <span id="year">2026</span> Muhammad Anees. All rights reserved.</p>
-                <p>Built with HTML5, CSS3 &amp; Vanilla JS.</p>
+                <p>Designed &amp; developed with <i class="fa-solid fa-heart"></i> using HTML5, CSS3 &amp; Vanilla JS.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ===== Back to top ===== -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <!-- ===== Back to Top ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <!-- ===== Scripts ===== -->
     <script src="script.js" defer></script>
 </body>
 </html>

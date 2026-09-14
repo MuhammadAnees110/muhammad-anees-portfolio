@@ -34,12 +34,6 @@
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
-    },
-    {
-      "source": "/googlef991da6a18570419.html",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-cache" }
-      ]
     }
   ]
 }
